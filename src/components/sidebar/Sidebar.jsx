@@ -1,6 +1,15 @@
 import './sidebar.css'
 
-export default function Sidebar() {
+import React, { useState } from 'react';
+
+export default function Sidebar({ handleCategoryChange }) {
+	const categories = ['Life', 'Music', 'Style', 'Sport', 'Tech', 'Cinema']
+	const [selectedCategory, setSelectedCategory] = useState('')
+
+	const handleClick = category => {
+		setSelectedCategory(category)
+		handleCategoryChange(category)
+	}
 	return (
 		<div className='sidebar'>
 			<div className='sidebarItem'>
@@ -15,12 +24,15 @@ export default function Sidebar() {
 			<div className='sidebarItem'>
 				<span className='sidebarTitle'>Categories</span>
 				<ul className='sidebarList'>
-					<li className='sidebarListItem'>Life</li>
-					<li className='sidebarListItem'>Music</li>
-					<li className='sidebarListItem'>Style</li>
-					<li className='sidebarListItem'>Sport</li>
-					<li className='sidebarListItem'>Tech</li>
-					<li className='sidebarListItem'>Cinema</li>
+					{categories.map((category, index) => (
+						<li
+							className={`sidebarListItem ${selectedCategory === category ? 'active' : ''}`}
+							key={index}
+							onClick={() => handleClick(category)}
+						>
+							{category}
+						</li>
+					))}
 				</ul>
 			</div>
 			<div className='sidebarItem'>

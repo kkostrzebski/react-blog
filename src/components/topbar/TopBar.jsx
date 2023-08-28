@@ -20,12 +20,12 @@ export default function TopBar() {
 						</Link>
 					</li>
 					<li className='topListItem'>
-						<Link className='link' to='/'>
+						<Link className='link' to='/about'>
 							ABOUT
 						</Link>
 					</li>
 					<li className='topListItem'>
-						<Link className='link' to='/'>
+						<Link className='link' to='/contact'>
 							CONTACT
 						</Link>
 					</li>
@@ -39,11 +39,15 @@ export default function TopBar() {
 			</div>
 			<div className='topRight'>
 				{user ? (
-					<img
-						className='topImg'
-						src='https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/366089747_255131694082283_1746677504116927587_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=VWR3XcqO3p8AX-vO8Bg&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdSG44CUYZjnEKyOly74IKcOKtIqqFs-O3c7PcHN2IN53w&oe=6503ED78'
-						alt=''
-					/>
+					
+						<Link className='link' to='/settings'>
+							<img
+								className='topImg'
+								src='https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.15752-9/366089747_255131694082283_1746677504116927587_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=ae9488&_nc_ohc=VWR3XcqO3p8AX-vO8Bg&_nc_ht=scontent.fpoz4-1.fna&oh=03_AdSG44CUYZjnEKyOly74IKcOKtIqqFs-O3c7PcHN2IN53w&oe=6503ED78'
+								alt=''
+							/>
+						</Link>
+					
 				) : (
 					<ul className='topList'>
 						<li className='topListItem'>
